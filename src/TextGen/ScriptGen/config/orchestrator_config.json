@@ -1,0 +1,73 @@
+{
+  "workflow_controller": {
+    "default_generation_config": {
+      "scope": "SINGLE_SCENE",
+      "character_count": 2,
+      "scene_count": 1,
+      "use_existing_bibles": false,
+      "auto_rewrite": false,
+      "rewrite_iterations": 1,
+      "parallel_generation": true,
+      "optimize_llm_calls": true
+    },
+    "max_parallel_scenes": 3,
+    "max_parallel_characters": 5,
+    "timeout_seconds": 300,
+    "enable_auto_fallback": true,
+    "max_retries": 2
+  },
+  "llm_optimizer": {
+    "enable_caching": true,
+    "cache_expire_hours": 24,
+    "cache_max_entries": 1000,
+    "enable_batching": true,
+    "batch_timeout_ms": 500,
+    "max_batch_size": 5,
+    "enable_deduplication": true,
+    "dedup_window_seconds": 30,
+    "token_optimization": {
+      "enable": true,
+      "max_input_tokens": 4000,
+      "max_output_tokens": 1000,
+      "truncation_strategy": "smart_truncate"
+    },
+    "performance_tracking": {
+      "enable": true,
+      "log_stats": true,
+      "cost_tracking": true,
+      "default_cost_per_1k_tokens": 0.02
+    }
+  },
+  "generation_scopes": {
+    "SINGLE_SCENE": {
+      "description": "Generate a single standalone scene",
+      "default_scene_count": 1,
+      "default_character_count": 2,
+      "require_bible": true
+    },
+    "MULTI_SCENE": {
+      "description": "Generate multiple connected scenes",
+      "default_scene_count": 3,
+      "default_character_count": 3,
+      "require_bible": true
+    },
+    "FULL_SCRIPT": {
+      "description": "Generate a complete script with act structure",
+      "default_scene_count": 5,
+      "default_character_count": 4,
+      "require_bible": true
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file_path": "logs/orchestrator.log",
+    "console_output": true,
+    "log_format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  "error_handling": {
+    "bible_error_strategy": "create_default",
+    "llm_error_strategy": "retry",
+    "scene_generation_error_strategy": "fallback_to_legacy",
+    "max_error_retries": 3
+  }
+} 

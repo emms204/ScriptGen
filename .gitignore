@@ -1,0 +1,4 @@
+detector.tflite
+.specstory
+src/TextGen/__pycache__
+src/TextGen/ScriptGen/__pycache__

@@ -1,0 +1,7 @@
+sqlalchemy>=2.0.0
+openai>=1.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+json5>=0.9.14
+tenacity>=8.2.3 

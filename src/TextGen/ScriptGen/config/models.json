@@ -1,0 +1,31 @@
+{
+    "default_model": "gpt-3.5-turbo",
+    "models": {
+        "openai": {
+            "api_key": "",
+            "available_models": [
+                "gpt-3.5-turbo",
+                "gpt-4",
+                "gpt-4-turbo"
+            ]
+        },
+        "mistral": {
+            "api_key": "",
+            "available_models": [
+                "mistral-tiny",
+                "mistral-small",
+                "mistral-medium",
+                "mistral-large"
+            ]
+        },
+        "local": {
+            "endpoint": "http://localhost:8000/v1/completions",
+            "available_models": [
+                "llama-7b",
+                "llama-13b",
+                "deepseek-7b",
+                "qwen-7b"
+            ]
+        }
+    }
+} 
